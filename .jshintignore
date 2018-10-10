@@ -1,0 +1,15 @@
+# Directories #
+###############
+src/App.js
+src/App.test.js
+src/index.js
+src/components
+public/
+
+# Node.js #
+###########
+/node_modules/
+
+# Git #
+#######
+.git*
