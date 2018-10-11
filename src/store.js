@@ -3,9 +3,18 @@ import 'firebase/firestore';
 import { firebaseReducer, reactReduxFirebase } from 'react-redux-firebase';
 import { combineReducers, compose, createStore } from 'redux';
 import { firestoreReducer, reduxFirestore } from 'redux-firestore';
-import firebaseConfig from './components/firebaseConfig';
+// import firebaseConfig from './components/firebaseConfig';
 // Reducers
 // @todo
+
+const firebaseConfig = {
+    apiKey: "AIzaSyDpYmLJhFXtYE4IqKZ86YmPu-YrUczZb1o",
+    authDomain: "casper-halloween-party.firebaseapp.com",
+    databaseURL: "https://casper-halloween-party.firebaseio.com",
+    projectId: "casper-halloween-party",
+    storageBucket: "casper-halloween-party.appspot.com",
+    messagingSenderId: "61749276150"
+};
 
 //react-redux-firebase config
 const rrfConfig = {
@@ -16,7 +25,9 @@ const rrfConfig = {
 // Init firebase
 firebase.initializeApp(firebaseConfig);
 // Init firestore
-// const firestore = firebase.firestore();
+const firestore = firebase.firestore();
+const settings = {timestampsInSnapshots: true};
+firestore.settings(settings);
 
 // Add reactReduxFirebase enhancer when making store creator
 const createStoreWithFirebase = compose(
@@ -34,11 +45,11 @@ const initialState = {};
 
 const store = createStoreWithFirebase(
     rootReducer, 
-    initialState,
+    initialState/* ,
     compose(
         reactReduxFirebase(firebase),
         window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-    )
+    ) */
 );
 
 export default store;
