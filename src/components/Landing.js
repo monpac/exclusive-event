@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { firebaseConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
+import flyer from '../assets/images/flyer.jpeg';
 
 class Landing extends Component {
 
@@ -17,7 +18,8 @@ class Landing extends Component {
 
     return (
         <div>
-            <h1>Esta página es privada :)</h1>
+            <h1>Hablá con un organizador y pedí tu código</h1>
+            <img style={{maxWidth: '500px'}} src={flyer} />
         </div>
     )
     
