@@ -19,7 +19,7 @@ class PaymentForm extends Component {
       email: '',
       telephone: '',
       invitadoDe: '',
-      src: 'https://www.mercadopago.com/mla/checkout/start?pref_id=217099145-b22c2f34-56b4-4ba2-b601-ae6dbf3b4420'
+      src: 'https://www.mercadopago.com/mla/checkout/start?pref_id=39364380-f486fd73-a1c5-4c2a-af76-8d11c5e06b7d'
     };
 
     this.openModal = this.openModal.bind(this);
@@ -79,9 +79,9 @@ class PaymentForm extends Component {
     // firestore.add({collection: 'invitados'}, invitado)
     .then(() => {
       if (this.state.sex === 'Hombre') {
-        this.setState({src: 'https://www.mercadopago.com/mla/checkout/start?pref_id=217099145-b22c2f34-56b4-4ba2-b601-ae6dbf3b4420'});
+        this.setState({src: 'https://www.mercadopago.com/mla/checkout/start?pref_id=39364380-f486fd73-a1c5-4c2a-af76-8d11c5e06b7d'});
       } else {
-        this.setState({src: 'https://www.mercadopago.com/mla/checkout/start?pref_id=217099145-cb2d7bbe-0a96-40c7-8681-5a7264757692'});
+        this.setState({src: 'https://www.mercadopago.com/mla/checkout/start?pref_id=39364380-da07c138-12c3-49ce-bd53-53f7fe18a6fd'});
       }
       window.$MPC.openCheckout ({
           url: this.state.src,

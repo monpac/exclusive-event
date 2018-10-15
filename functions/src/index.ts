@@ -19,3 +19,27 @@ export const ticketSold = functions.firestore.document('invitados/{userId}').onU
     return null;
 
 });
+
+export const invitadoDe = functions.firestore.document('invitados/{userId}').onCreate( (snap, context) => {
+  
+  const newValue = snap.data();
+  const nombre = newValue.nombre;
+
+  const accessRef = admin.firestore().collection('access').where("user", "==", context.params.userId).get()
+  .then(snapshot => {
+    snapshot.forEach(doc => {
+      admin.firestore().collection('invitados').doc(context.params.userId).update({'invitadoDe': doc.data().owner})
+      .then(() => console.log(`Updated invitadoDe ${doc.data().owner} to ${context.params.userId}`))
+      .catch(err => {
+        console.log('Error getting documents', err);
+        return true;
+      });
+    });
+  })
+  .catch(err => {
+    console.log('Error getting documents', err);
+  });
+
+  return null;
+
+});

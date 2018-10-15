@@ -26,7 +26,7 @@ class AuthenticatedView extends Component {
 
       if (auth.uid && access) {
           if (access.user === "") {
-            firestore.set('access/' + access.id, {user: auth.uid});
+            firestore.update('access/' + access.id, {user: auth.uid});
             return { isAuthenticated: true, isSameUser: false };
           }
           if (auth.uid === access.user) {

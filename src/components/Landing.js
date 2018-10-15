@@ -19,7 +19,7 @@ class Landing extends Component {
     return (
         <div>
             <h1>Hablá con un organizador y pedí tu código</h1>
-            <img style={{maxWidth: '500px'}} src={flyer} />
+            <img style={{maxWidth: '500px'}} alt="Flyer" src={flyer} />
         </div>
     )
     

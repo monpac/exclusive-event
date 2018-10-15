@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Landing from './components/Landing';
-import store from './store';
 import AuthenticatedView from './components/AuthenticatedView';
-
+import Landing from './components/Landing';
+import LoginView from './components/LoginView';
+import store from './store';
 
 
 
@@ -19,6 +19,7 @@ class App extends Component {
                 <Switch>
                   <Route exact path="/" component={Landing} />
                   <Route exact path="/:id" component={AuthenticatedView} />
+                  <Route exact path="/login/admin" component={LoginView} />
                 </Switch>
               </div>
           </div>
