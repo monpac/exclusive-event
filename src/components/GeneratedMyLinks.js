@@ -46,7 +46,7 @@ class GeneratedMyLinks extends Component {
 
     const { firestore, uid } = this.props;
 
-    firestore.add({collection: 'access'}, {owner: uid, user: ''})
+    firestore.add({collection: 'access'}, {owner: uid, user: '', createdAt: firestore.FieldValue.serverTimestamp()})
     .then(() => {
       const la = document.createElement('span');
       la.innerText = "Link Generado";
@@ -69,7 +69,7 @@ class GeneratedMyLinks extends Component {
 
   render() {
 
-    const { userAccess } = this.props;
+    const { userAccess, uid } = this.props;
     
     return (
       <div>
@@ -78,8 +78,8 @@ class GeneratedMyLinks extends Component {
             ? <p>Cargando</p>
             : isEmpty(userAccess)
               ? 'Ningún link generado todavía'
-              : userAccess.map((linkaccess) =>
-                <Link key={linkaccess.id} link={linkaccess} />
+              : userAccess.map((linkaccess, i) =>
+                <Link key={linkaccess.id} uid={uid} link={linkaccess} />
                 )
         }
         <button style={{cursor: 'pointer'}} onClick={this.generateAccess}>Generar Nuevo Link</button>
@@ -99,9 +99,8 @@ export default compose(
   firestoreConnect(props => [
       { 
         collection: 'access',
-        where: [
-          ['owner', '==', props.uid]
-        ]
+        // where: ['owner', '==', props.uid],
+        orderBy: ['createdAt']
       }
   ]),
   connect((state, props) => ({
