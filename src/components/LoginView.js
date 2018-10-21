@@ -32,7 +32,7 @@ class LoginView extends Component {
 
     if (auth.uid) {
 
-      let uids = ['P5w56MpbVebiTVhT7CQGxrkdgR53', 'cDwcrlbTpWfuqDY53sQMF1Cy8KG2', '33ZZo9RCVIZS4yW60dqyVkvgEDL2', 'w61RgKRvaEa4ERlFuJHJsiNOCTB3', 'sR5vZaGLnqXRLn92T1vQZD7m7eg2', 'pAlZp9NZJNZxIwaO7tzMCp3fvcl2', 'XGBeIqgZvCZCt3JxaVhgxpn5jHF2', 'uUb7gEobePhS61QPYzcw3I5KZ952'];
+      let uids = ['MxvE45LAArNC1ui9gVmVHqZ3Y503', 'P5w56MpbVebiTVhT7CQGxrkdgR53', 'cDwcrlbTpWfuqDY53sQMF1Cy8KG2', '33ZZo9RCVIZS4yW60dqyVkvgEDL2', 'w61RgKRvaEa4ERlFuJHJsiNOCTB3', 'sR5vZaGLnqXRLn92T1vQZD7m7eg2', 'pAlZp9NZJNZxIwaO7tzMCp3fvcl2', 'XGBeIqgZvCZCt3JxaVhgxpn5jHF2', 'uUb7gEobePhS61QPYzcw3I5KZ952'];
 
       if (uids.includes(auth.uid)) {
         return { isAuthenticated: true };
