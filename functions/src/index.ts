@@ -12,7 +12,7 @@ export const ticketSold = functions.firestore.document('invitados/{userId}').onU
     if (newValue.pagoAprobado) {
         const disponiblesRef = admin.firestore().collection('disponibles').doc('AizDic8wYjJmuvUwrQmU');
         const disponiblesValues   = await disponiblesRef.get();
-        const writeResult         = await disponiblesRef.set({disponibles: disponiblesValues.data().disponibles - 1, fake: disponiblesValues.data().fake - 1});
+        const writeResult         = await disponiblesRef.set({disponibles: disponiblesValues.data().disponibles - 1, fake: 9/* disponiblesValues.data().fake - 1 */});
         return writeResult;
     }
 
