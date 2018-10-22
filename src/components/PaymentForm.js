@@ -78,6 +78,12 @@ class PaymentForm extends Component {
     firestore.set('invitados/' + access.user, invitado)
     // firestore.add({collection: 'invitados'}, invitado)
     .then(() => {
+
+      if (this.state.sex !== 'Hombre') {
+        alert('¡Entradas Agotadas!');
+        return;
+      }
+
       if (this.state.sex === 'Hombre') {
         this.setState({src: 'https://www.mercadopago.com/mla/checkout/start?pref_id=39364380-f486fd73-a1c5-4c2a-af76-8d11c5e06b7d'});
       } else {
