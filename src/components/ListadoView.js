@@ -62,7 +62,7 @@ class ListadoView extends Component {
                         : invitados.filter(function (invitado) {
                             return invitado.pagoAprobado;
                           }).map((invitado, i) =>
-                            <tr><td>{invitado.id}</td><td>{invitado.name}</td><td>{invitado.lastname}</td><td>{invitado.email}</td><td>{invitado.telephone}</td><td>{invitado.sex}</td></tr>
+                            <tr><td>{invitado.id}</td><td>{invitado.name}</td><td>{invitado.lastname}</td><td>{invitado.dni}</td><td>{invitado.invitadoDe}</td><td>{invitado.email}</td><td>{invitado.telephone}</td><td>{invitado.sex}</td></tr>
                             )
                   }
                   </table>
@@ -81,7 +81,7 @@ class ListadoView extends Component {
                         : invitados.filter(function (invitado) {
                             return ! invitado.pagoAprobado;
                           }).map((invitado, i) =>
-                            <tr><td>{invitado.id}</td><td>{invitado.name}</td><td>{invitado.lastname}</td><td>{invitado.email}</td><td>{invitado.telephone}</td><td>{invitado.sex}</td></tr>
+                            <tr><td>{invitado.id}</td><td>{invitado.name}</td><td>{invitado.lastname}</td><td>{invitado.dni}</td><td>{invitado.invitadoDe}</td><td>{invitado.email}</td><td>{invitado.telephone}</td><td>{invitado.sex}</td></tr>
                             )
                   }
                   </table>

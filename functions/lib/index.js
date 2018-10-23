@@ -18,7 +18,7 @@ exports.ticketSold = functions.firestore.document('invitados/{userId}').onUpdate
     if (newValue.pagoAprobado) {
         const disponiblesRef = admin.firestore().collection('disponibles').doc('AizDic8wYjJmuvUwrQmU');
         const disponiblesValues = yield disponiblesRef.get();
-        const writeResult = yield disponiblesRef.set({ disponibles: disponiblesValues.data().disponibles - 1, fake: 9 /* disponiblesValues.data().fake - 1 */ });
+        const writeResult = yield disponiblesRef.set({ disponibles: disponiblesValues.data().disponibles - 1, fake: 0 /* disponiblesValues.data().fake - 1 */ });
         return writeResult;
     }
     return null;

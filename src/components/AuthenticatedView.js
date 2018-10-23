@@ -5,7 +5,6 @@ import { firebaseConnect, firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 import Countdown from './Countdown';
 import PaymentForm from './PaymentForm';
-import Restantes from './Restantes';
 import Spinner from './Spinner';
 
 
@@ -66,7 +65,7 @@ class AuthenticatedView extends Component {
                     </div>
                     {/* <img className="logo" alt="Casper Logo" src={logo} onError={this.onErrorImage(this)} /> */}
                     <PaymentForm access={access} />
-                    <Restantes />
+                    {/* <Restantes /> */}
                   </div>
                 ) : 
                 (

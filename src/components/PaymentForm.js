@@ -125,6 +125,12 @@ class PaymentForm extends Component {
   render() {
     const { pagoAprobado } = this.state;
 
+    return (
+      <div>
+        <h3>La Fiesta se encuentra AGOTADA</h3>
+      </div>
+    );
+
     if ( ! pagoAprobado) {
       return (
         <div>
